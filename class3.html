@@ -89,7 +89,25 @@
           </div>
         </section>
 
-        <!-- Inline vs. block-->
+        <section>
+          <p>By the end of this section, you will be able to build a page that looks like this:</p>
+          <img src="img/class_3_screenshot.png">
+        </section>
+
+        <section>
+          <h3>Experiment (and Review), Part I</h3>
+          <p>Make a new file called sandbox.html</p>
+          <p>Add a few images (img tag) and a few links (a tag).</p><br>
+          <p>What do you notice about the flow of the elements?</p>
+        </section>
+
+        <section>
+          <h3>Experiment (and Review), Part II</h3>
+          <p>Erase your sandbox.html file.</p>
+          <p>Add any of the following tags: p, h1-h6, ul, li</p><br>
+          <p>What do you notice about the flow of the elements?</p>
+        </section>
+
         <section>
           <h3>Inline vs Block</h3>
           <div class="halfblock">
@@ -107,12 +125,11 @@
           <ul>
             <li>CSS divides HTML into two types: inline and block.</li>
             <li>After block elements, browsers render a new line.</li>
-            <li><strong>Inline elements:</strong> img, a, br, em, strong</li>
+            <li><strong>Inline elements:</strong> img, a, em, strong</li>
             <li><strong>Block elements:</strong> p, h1, ul, li, almost everything else</li>
           </ul>
         </section>
 
-        <!-- Divs -->
         <section>
           <h3>Element: Div</h3>
           <ul>
@@ -123,19 +140,56 @@
           </ul>
         </section>
         <section>
-          <h3>Div Examples</h3>
-<pre><code class="html">&lt;div&gt;
-   &lt;p&gt;Content&lt;p&gt;
-   &lt;p&gt;Content&lt;p&gt;
-&lt;/div&gt;
+          <h3>Simple Div Example</h3>
+<pre><code class="html">&lt;div class="bluebox"&gt;&lt;/div&gt;
 </code></pre>
-<pre><code class="html">&lt;div id="header"&gt;
-   &lt;h1&gt;Main Heading&lt;h1&gt;
-&lt;/div&gt;
+<pre><code>.bluebox {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
 </code></pre>
-<pre><code class="html">&lt;div class="sub-content"&gt;
-   &lt;p&gt;Some more content&lt;p&gt;
-&lt;/div&gt;
+        </section>
+        <!-- height-->
+        <section>
+          <h3>Property: Height</h3>
+          <p>Sets the height of an element.</p>
+          <p>If a div is empty but has a background color set, height is necessary in order to make it appear.</p>
+<pre><code class="css">div{
+  height: 50px;
+  background-color: red;
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Property: Width</h3>
+          <p>Sets the width of an element.</p>
+<pre><code class="css">div#sidebar{
+  height: 50px;
+  width: 31%;
+  padding: 1%;
+  background-color: red;
+}
+</code></pre>
+        </section>
+
+        <!-- Exercise -->
+        <section>
+          <h3>Let's develop it!</h3>
+          <div>
+            <p>Add a width &amp; height to our divs.</p>
+            <p>Use IDs to target each div with CSS</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Try It!</h3>
+          Create a few divs of varying sizes and colors. Feel free to experiment with dimensions as px or % like the example below. 
+          <pre><code>.bluebox {
+  background-color: blue;
+  height: 200px;
+  width: 30%;
+}
 </code></pre>
         </section>
 
@@ -146,34 +200,30 @@
             <li>You can wrap groups of elements in a div to style them differently.</li>
           </ul>
         </section>
-
         <section>
-          <h3>Grouping elements with div, cont.</h3>
-<pre><code class="css">.align-right{
-  text-align:right;
-  color: purple;
-  font-weight: bold;
-}
-</code></pre>
-<pre><code class="html">&lt;div class="align-right"&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit&lt;/p&gt;
-  &lt;p&gt;Sed do eiusmod tempor incididunt ut labore et dolore.&lt;/p&gt;
+          <h3>Examples: Grouping Elements with Divs</h3>
+<pre><code class="html">&lt;div&gt;
+   &lt;p&gt;Content for my first paragraph&lt;p&gt;
+   &lt;p&gt;Content for my second paragraph&lt;p&gt;
 &lt;/div&gt;
-&lt;p&gt;Magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;
-&lt;p&gt;Quis nostrud exercitation ullamco.&lt;/p&gt;
 </code></pre>
-          <div style="text-align:right; font-weight:bold; font-size:70%; color:purple;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore.</p>
-          </div>
-          <div style="font-size:70%;">
-            <p>Magna aliqua. Ut enim ad minim veniam.</p>
-            <p>Quis nostrud exercitation ullamco.</p>
-          </div>
+<pre><code class="html">&lt;div id="header"&gt;
+   &lt;h1&gt;Main Heading&lt;h1&gt;
+   &lt;p&gt;Content for this paragraph&lt;p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="html">&lt;div class="sidebar"&gt;
+   &lt;ul&gt;
+     &lt;li&gt;Bullet 1&lt;li&gt;
+     &lt;li&gt;Bullet 2&lt;li&gt;
+     &lt;li&gt;Bullet 3&lt;li&gt;
+   &lt;ul&gt;
+&lt;/div&gt;
+</code></pre>
         </section>
 
         <section>
-          <h3>HTML5</h3>
+          <h3>HTML5 Semantic Tags</h3>
          <p class="left-align">HTML5 offers new elements for better document structure and semantics</p>
          <p class="left-align">Some of the most commonly used new tags include:</p>
 <pre><code class ="html">&lt;header&gt;&lt;/header&gt;
@@ -185,12 +235,6 @@
 </code></pre>
 
         <p>A full list can be found <a href="http://www.tutorialspoint.com/html5/html5_new_tags.htm">here</a>.</p>
-        </section>
-
-        <section>
-          <h3>Let's Develop It</h3>
-           <p>Let's create a site using divs to separate content into different sections on our page.</p>
-           <p>Create a header, content area, sidebar, and a footer.</p>
         </section>
 
         <section>
@@ -245,6 +289,16 @@
 </code></pre>
         </section>
 
+        <section>
+          <h3>Let's Develop It</h3>
+           <p>Let's create a site using divs to separate content into different sections on our page.</p>
+           <p>Create a header, a navigation section for links, content area, and a footer.</p>
+           <p>See the example on the next slide. Don't worry about borders or spacing. </p>
+        </section>
+
+        <section>
+          <img src="img/class_3_screenshot.png">
+        </section>
         <!-- Span -->
         <section>
           <h3>Element: Span</h3>
@@ -269,7 +323,7 @@
         <!-- Exercise-->
          <section>
           <h3>Let's Develop It</h3>
-         <p>Let's add some spans to our content to help highlight some text. </p>
+         <p>Add two spans to your content to help highlight some text.</p>
         </section>
 
         <!-- Pseudo class-->
@@ -362,6 +416,11 @@ a:active {color:#0000FF;} /* selected link */
           <img src="img/box-model-padding2.png" alt="Graphic illustrating box model, with uneven padding"/>
         </section>
 
+        <section>
+          <h3>Try It</h3>
+          <p>Add padding to one or more elements to see how they change. </p>
+        </section>
+
         <!-- Border-->
         <section>
           <h3>Border</h3>
@@ -376,19 +435,10 @@ a:active {color:#0000FF;} /* selected link */
 <pre><code class="css">border: 1px solid #ff0000;</code></pre>
           <p>A thick dotted black top border</p>
 <pre><code class="css">border-top: 4px dotted #000000;</code></pre>
-          <p>Two diﬀerent border styles</p>
+          <p>Two different border styles</p>
 <pre><code class="css">border-top: 1px solid #ff0000;
 border-bottom: 4px dotted #000000;
 </code></pre>
-        </section>
-
-        <section>
-          <h3>Border - Other Properties</h3>
-<pre><code class="css">border-width: 10px;
-border-style: dashed;
-border-color: #666666;
-</code></pre>
-          <p>You can specify each property separately, or all three together.</p>
         </section>
 
         <!-- Margin -->
@@ -425,9 +475,9 @@ width: 300px;
         <section>
           <h3>Wrappers</h3>
           <p>Wrappers are a good way to center content if the screen width is wider than your content.</p>
-<pre><code class="css">div.wrapper{
+<pre><code class="css">.wrapper{
   width: 100%;
-  max-width: 1400px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 </code></pre>
@@ -436,44 +486,12 @@ width: 300px;
         <!-- Exercise -->
         <section>
           <h3>Let's Develop it!</h3>
-          <p>Let's add some padding, borders, and margins to our divs.</p>
           <p>Let's center our entire document in the browser.</p>
+          <p>Let's add some borders and margins to our divs. Feel free to adjust the padding if necessary.</p>
+          <p>Try to make your site look similar to the slide on the next page.</p>
         </section>
-
-        <!-- Sizing -->
-        <!-- Width-->
         <section>
-          <h3>Property: Width</h3>
-          <p>Sets the width of an element.</p>
-          <p>Does not include padding or borders. Remember to add these to the width.</p>
-<pre><code class="css">div#sidebar{
-  width: 31%;
-  padding: 1%;
-  border: none; //Total width is 33%
-}
-</code></pre>
-        </section>
-
-        <!-- height-->
-        <section>
-          <h3>Property: Height</h3>
-          <p>Sets the height of an element.</p>
-          <p>Does not include padding or borders. Remember to add these to the height.</p>
-<pre><code class="css">p.alert{
-  height: 50px;
-  padding: 5px;
-  border: 2px solid red; //Total height is 64px
-}
-</code></pre>
-        </section>
-
-        <!-- Exercise -->
-        <section>
-          <h3>Let's develop it!</h3>
-          <div>
-            <p>Add a width &amp; height to our divs.</p>
-            <p>Use IDs to target each div with CSS</p>
-          </div>
+          <img src="img/class_3_screenshot.png">
         </section>
 
         <section>

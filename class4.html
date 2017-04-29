@@ -58,7 +58,6 @@
             <ul>
               <li>HTML elements are positioned static by default.</li>
               <li>Static elements are positioned in the normal ﬂow of the page</li>
-              <li>Static elements ignore top, bottom, right or left property specifications.</li>
             </ul>
           </section>
 
@@ -101,7 +100,6 @@
               <li>Takes the element out of the normal flow, allowing it to be moved to the top, left, right or bottom. </li>
               <li>Does not affect the elements surrounding it.</li>
               <li>Makes an element a "positioning context" in which to position other elements relative to it.</li>
-              <li>Relative positioning and absolute positioning are used together.</li>
             </ul>
           </section>
 
@@ -123,6 +121,15 @@
             </div>
           </section>
 
+          <section>
+            <h3>Try It!</h3>
+            <p>In your sandbox.html, create three divs with three different IDs.</p>
+            <p>Give the 1st div height, width, and background color.</p>
+            <p>Give the 2nd div height, width, and background color.</p>
+            <p>Give the 3rd div height, width, and background color.</p>
+            <p>Go back to the CSS for the second div and add position: relative. Then add top/bottom/left/right measurements to offset it from it's normal position.</p>
+          </section>
+
           <!-- Absolute positioning-->
           <section >
             <h3>Absolute Positioning</h3>
@@ -132,7 +139,7 @@
               <li>Its container block is the first element that has a position other than static.</li>
               <li>If no such element is found, the container block is &lt;html&gt;.</li>
               <li>Other elements act as if it's not there.</li>
-              <li>Determined by its oﬀset values in the properties top, bottom, right and left.</li>
+              <li>Determined by its offset values in the properties top, bottom, right and left.</li>
             </ul>
           </section>
 
@@ -141,22 +148,22 @@
             <p>The "absolute" value will take the element out of the normal flow and position it in relation to the window (or the closest non-static element).</p>
 <pre><code class="css">.top{
   position: absolute;
-  top: -40px;
+  top: 10px;
   right: 10px;
   background-color: yellow
 }
 .bottom{
   position: absolute;
-  bottom: -40px;
-  left:60px;
+  bottom: 10px;
+  left: 60px;
   background-color: green
 }
 </code></pre>
             <div>
-              <div style="position: absolute; top: -40px; right: 10px; background-color: yellow; color:black">
+              <div style="position: absolute; top: 10px; right: 10px; background-color: yellow; color:black">
                 Up here
               </div>
-              <div style="position: absolute; bottom: -40px; left:60px; background-color: green">
+              <div style="position: absolute; bottom: 10px; left:60px; background-color: green">
                 Down here
               </div>
             </div>
@@ -175,7 +182,18 @@
           </section>
 
           <section>
-            <h3>Z-index</h3>
+            <h3>Demo</h3>
+            <p>We'll walk through each step of creating an image banner with absolutely positioned text over the top using absolute + relative positioning.</p>
+          </section>
+
+          <section>
+            <h3>Your Turn</h3>
+            <p>Add an image background to your header.</p>
+            <p>Use absolute and relative positioning to center a piece of text on the image.</p>
+          </section>
+
+          <section>
+            <h3>A note on Z-index</h3>
             <p>Sometimes elements overlap. You can change the order of overlapping with z-index. The element with highest z-index goes on top.</p>
 <pre><code class ="css">.bottom{
   position: absolute;
@@ -195,17 +213,12 @@
             <div style="position: absolute; bottom: -15px; left:60px; background-color: green; z-index: 2; ">Top</div>
           </section>
 
-          <section>
-            <h3>Let's Develop it!</h3>
-            <p>Let's add some positioning.</p>
-            <p>Let's create a div that contains an image and a caption, and position the caption absolutely overtop the image.</p>
-          </section>
-
           <!-- Float-->
           <section>
             <h3>Float</h3>
             <ul>
-              <li>"Floating" an element takes it in the normal flow, as far to the left or right of it's containing element as possible.</li>
+              <li>Floats are commonly used to make images appear like they do in the newspaper: floating off to the side while text wraps around it.</li>
+              <li>"Floating" an element takes it out of the normal flow, as far to the left or right of it's containing element as possible.</li>
               <li>Any other elements, such as paragraphs or lists, will wrap around the floated element.</li>
               <li>Always specify a width when floating an element, otherwise the element is likely to take up the whole page and not appear floated.</li>
               <li>You can specify a) whether an element is floated or not, and b) which side it ﬂoats on.</li>
@@ -215,7 +228,7 @@
           <!--example float-->
           <section>
             <h3>Float: Example</h3>
-            <p>Below a &lt;blockquote&gt; is floated to the left, allowing text to wrap around it on the right</p>
+            <p>The div below is floated to the left, allowing text to wrap around it on the right</p>
             <img src="img/example-floatbq.png" alt="example float" />
           </section>
 
@@ -231,9 +244,7 @@
               <small>Hi, I'm a yellow box with black text.<br/>
               I like to hang out on the left side.</small>
             </div>
-            <div class="left-align">Not floating element</div>
-            <div class="left-align">Not floating element</div>
-            <div class="left-align">Not floating element with wrapping Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+            <div class="left-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
           </section>
 
           <section>
@@ -249,6 +260,13 @@
                 float: right;</p>
               </div>
             </div>
+          </section>
+
+          <section>
+            
+          <h3>Try It!</h3>
+          <p>Take your list of links and turn it into a floating element to right with a width of about 1/4 of the wrapper.</p>
+          <p>Next, take your main content and turn it into a floating element to the left with a width of about 3/4 of the wrapper.</p>
           </section>
 
           <!-- Clear-->
@@ -272,28 +290,43 @@ clear: both;
   width:50px;
   background:yellow;
 }
-.clear-left{
+.clearexample{
   clear:left
 }
 </code></pre>
             <div style ="float:left;width:50px;background:yellow; color:black; ">
-              hi<br/>
-              hi<br/>
-              hi
+              <br/>
+              <br/>
+             <br>
             </div>
             <div class="left-align">Not floating element</div>
             <div class="left-align">Not floating element</div>
-            <div class="left-align" style="clear: left;">Non-floating element with a class of <strong>.clear-left</strong></div>
+            <div class="left-align" style="clear: left;">Non-floating element with a class of <strong>.clearexample</strong></div>
           </section>
 
-          <!-- Exercise-->
           <section>
-            <h3>Let's Develop It</h3>
-            <p>Let's float our side bar and content areas.</p>
+
+            <h3>Adding Additional HTML Pages</h3>
+            <p>You can link to your own pages by using a relative path. For example, if you have a page called aboutme.html, you could link to it like this:</p>
+            <code><pre>
+&lt;a href="aboutme.html"&gt;About Me&lt;/a&gt;
+            </pre></code>
+          </section>
+
+          <section>
+            <h3>Try It!</h3>
+            <p>Create at least one more html page in the same folder as your index.html.</p>
+            <p>Add or change one of your existing links so that it goes to your new html page.</p>
           </section>
 
           <section>
             <h2>Questions?</h2>
+          </section>
+
+          <section>
+            
+          <h3>Work Time</h3>
+          <p>Use this time to experiment with your new skills and build out your website.</p>
           </section>
 </div><!-- Close slides -->
 
